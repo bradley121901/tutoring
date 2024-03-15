@@ -1,0 +1,37 @@
+.wholepage {
+  background-color: rgb(174, 225, 124);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.producttable {
+  margin-top: 1%;
+  margin-left: 30%;
+  font-size: 150%;
+}
+
+nav {
+  background-color: #556b2f;
+}
+ul {
+  list-style-type: none;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  padding: 10px 100px;
+  text-align: center;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #556b2f;
+}
+
+.registerform {
+  font-size: 30px;
+}

@@ -1,0 +1,38 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='standard.css')
+ }}"
+  />
+  {% include 'navbar.html' %}
+</head>
+<body class="wholepage">
+  <br />
+  <br />
+  <br />
+  <h1>Sell a Product</h1>
+  <form
+    method="post"
+    action="{{ url_for('sell', username=username)}}"
+    enctype="multipart/form-data"
+  >
+    <br />
+    <label for="name">Product Name</label>
+    <input type="name" id="name" name="name" />
+
+    <br />
+    <br />
+    <label for="price">Price</label>
+    <input type="price" id="price" name="price" />
+    <br />
+    <br />
+    <label for="description">Description</label>
+    <input type="description" id="description" name="description" />
+    <br />
+    <br />
+    <input type="file" name="photo" accept="image/*" />
+    <br />
+    <br />
+    <input type="submit" value="Sell" />
+  </form>
+</body>

@@ -1,0 +1,55 @@
+<head>
+  <title>About</title>
+  {% include 'navbar.html' %}
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='standard.css')
+ }}"
+  />
+</head>
+<body class="wholepage">
+  <br />
+  <p>This is the about page</p>
+  <button onclick="show()">Click here</button>
+  <img id="image" />
+
+  <div class="d">
+    <p>Enter your message</p>
+    <input type="text" id="user-input" />
+    <button onclick="sendMessage()">Submit</button>
+  </div>
+
+  <div id="chat-container">
+    <div id="chat">
+      <p>User: hello</p>
+    </div>
+  </div>
+
+  <script>
+    function show() {
+      var img = document.getElementById('image');
+      img.src = "{{ url_for('static', filename='tree.png')}}";
+    }
+
+    function sendMessage() {
+      var userMessage = document.getElementById('user-input').value;
+
+      document.getElementById('chat').innerHTML +=
+        '<p>User: ' + userMessage + '</p>';
+
+      fetch('/about', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: userMessage }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          var botResponse = data.response;
+          document.getElementById('chat').innerHTML +=
+            '<p>Bot: ' + botResponse + '<p>';
+        });
+    }
+  </script>
+</body>

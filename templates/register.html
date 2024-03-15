@@ -1,0 +1,39 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='standard.css')
+ }}"
+  />
+  <title>Register</title>
+</head>
+<body class="wholepage">
+  <br />
+  <br />
+  <br />
+  <h1>Sign up for an account</h1>
+
+  <form method="post" action="{{ url_for('register')}}" class="registerform">
+    <label for="name">Enter name:</label>
+    <input type="text" id="name" name="name" />
+    <br />
+    <label for="email">Enter email:</label>
+    <input type="text" id="email" name="email" />
+    <br />
+
+    <label for="username">Enter username:</label>
+    <input type="text" id="username" name="username" />
+    <br />
+    <label for="password">Create password:</label>
+    <input type="text" id="password" name="password" />
+    <br />
+    <label for="repeatpassword">Enter password again:</label>
+    <input type="text" id="repeatpassword" name="repeatpassword" />
+    <br />
+    <br />
+    <button type="submit" value="Confirm" id="confirm" />Join now</button>
+  </form>
+
+  <a href="/">
+  <button name="goback">Return to login page</button>
+  </a>
+</body>

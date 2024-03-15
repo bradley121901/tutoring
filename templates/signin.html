@@ -1,0 +1,26 @@
+<head>
+  <title>Website</title>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='signin.css') }}"
+  />
+</head>
+<body>
+  <a href="https://google.com"><p class="websitetitle">Hello!</p></a>
+
+  <form method="post" action="{{ url_for('signin')}}">
+    <br />
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" />
+
+    <br />
+    <br />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" />
+    <br />
+    <br />
+    <input type="submit" value="Sign in" />
+  </form>
+
+  <a href="/register"><button class="registerbtn">Register</button></a>
+</body>

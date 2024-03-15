@@ -1,0 +1,20 @@
+nav {
+  background-color: #556b2f;
+}
+ul {
+  list-style-type: none;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  padding: 10px 100px;
+  text-align: center;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #556b2f;
+}

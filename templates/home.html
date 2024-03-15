@@ -1,0 +1,40 @@
+<head>
+  <link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='standard.css')
+ }}"/>
+ {% include 'navbar.html' %}
+</head>
+
+<body class="wholepage">
+  <br />
+  <p>This is the home page</p>
+  <h1>Welcome {{ username }}<h1>
+
+  <img src="{{ url_for('static', filename='tree.png')}}" alt="Tree Image" />
+
+  <h1> Products for Sale </h1>
+  <table class="producttable">
+
+    <thead>
+      <th>ID</th>
+      <th>User</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Description</th>
+    </thead>
+
+    <tbody>
+      {% for product in products %}
+      <tr>
+        <td>{{product.id}} </td> 
+        <td>{{product.username}} </td> 
+        <td>{{product.name}} </td> 
+        <td>{{product.price}} </td> 
+        <td>{{product.description}} </td> 
+        </tr>
+    {% endfor %}
+    <tbody>
+  
+</table>
+</body>
